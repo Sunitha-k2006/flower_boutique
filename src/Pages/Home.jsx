@@ -1,7 +1,11 @@
-import React from 'react'
+import React ,{useEffect,useState} from 'react'
 
 const Home = () => {
-   
+   const[counter,setCounter]=useState(0)
+   const[like,setLike] =useState(0)
+   useEffect(()=>{
+    console.log("hii")
+   },[counter,like])
     return (
         <div className='min-h-screen flex items-center justify-center content-center  gap-x-20'>
             <img src="https://cdn.pixabay.com/photo/2023/04/19/09/34/flower-7937334_1280.jpg" alt="Flowers" class=" object-right absolute inset-0 w-full object-fill -z-10 h-[900px] overflow-hidden  opacity-90" />
@@ -13,7 +17,16 @@ Every emotion has a color, and every story has its own flower.
 Tell us what you feel, and we’ll design a personalized, thoughtful bouquet made just for you.
 From love to joy, celebration to comfort — we create blooms that truly speak for you.</strong>
             </h3>
+            <div class='counter'>
+                <h1 className='count'>{counter}</h1>
+                <h1 className='like'>{like}</h1>
+                <button onClick={()=>{setCounter(counter+1)}}>Counter</button>
+                <button onClick={()=>{setLike(like+1)}}>Like</button>
+
+            </div>
         </div>
+    
+       
     )
 }
 

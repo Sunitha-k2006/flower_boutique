@@ -1,10 +1,11 @@
 
 
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header =()=> {
     const name="guru";
+    const navigate = useNavigate();
   return (
     <div>
 
@@ -26,8 +27,15 @@ const Header =()=> {
             <Link to='/Contact'>
               <li className="transition duration-5s ease-in-out text hover:text-lg  hover:text-pink-300">Contact</li>
             </Link>
+            <Link to='/Login'>
+              <li className="transition duration-5s ease-in-out text hover:text-lg  hover:text-pink-300">Login</li>
+            </Link>
+            <Link to='/Signup'>
+              <li className="transition duration-5s ease-in-out text hover:text-lg  hover:text-pink-300">Signup</li>
+            </Link>
             
         </ul>
+        
        </header>
     </div>
   )
